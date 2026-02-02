@@ -39,4 +39,7 @@ A simple React app to manage tasks with priority and localStorage.
 - Priority (High / Medium / Low)
 - LocalStorage
 
+## Live Demo
+[React Task Manager Live](https://taskin-manager.vercel.app/)
+
 📌 This repository is actively maintained and updated.
