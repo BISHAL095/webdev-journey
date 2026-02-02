@@ -1,22 +1,23 @@
 export default function TaskItem({ task, toggleTask, deleteTask }) {
   return (
-    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+    <li
+    className={`task-item priority-${task.priority.toLowerCase()} ${
+        task.isCompleted ? "completed" : ""
+    }`}
+    >    
       <input
         type="checkbox"
         checked={task.isCompleted}
         onChange={() => toggleTask(task.id)}
       />
 
-      <span
-        style={{
-          flex: 1,
-          textDecoration: task.isCompleted ? "line-through" : "none",
-        }}
-      >
-        {task.title}
+      <span className="task-title">{task.title}</span>
+
+      <span className="priority-badge">
+        {task.priority}
       </span>
 
-      <button onClick={() => deleteTask(task.id)}>❌</button>
+      <button onClick={() => deleteTask(task.id)}>Delete</button>
     </li>
   );
 }
