@@ -1,0 +1,26 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;              /* ensures space between label & input */
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;           /* darker so it’s visible */
+}
+
+.input-group input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px #4f46e5;
+}
