@@ -1,27 +1,4 @@
-// import { useState } from "react";
 
-// export default function TaskForm({items,addTask}){
-//     const [tasks,setTasks] =useState(items);
-//     const [taskTitle,setTaskTitle]=useState("");
-
-//     function handleTitle(e){
-//         setTaskTitle(e.target.value);
-//         setTasks({...tasks,taskTitle});
-
-//     }
-//     return(
-//         <div className="task-form">
-//             <input 
-//                 name="title"
-//                 placeholder="Add Task Heading"
-//                 value={taskTitle}
-//                 onChange={(e)=> handleTitle(e)}
-//             /> 
-//             <button onClick={addTask}>Save</button> 
-//         </div>
-        
-//     )
-// }  
 import { useState } from "react";
 
 export default function TaskForm({ addTask }) {

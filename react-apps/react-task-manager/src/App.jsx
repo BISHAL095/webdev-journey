@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -9,21 +10,32 @@ function App() {
       ...prev,
       {
         id: crypto.randomUUID(),
-        completed: false,
+        isCompleted: false,
         ...taskData,
       },
     ]);
+  }
+
+  function toggleTask(id) {
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, isCompleted: !item.isCompleted }
+          : item
+      )
+    );
+  }
+
+  function deleteTask(id){
+    const newItems=items.filter((item)=>item.id!==id);
+    setItems(newItems);
   }
 
   return (
     <>
       <h1>Task Manager</h1>
       <TaskForm addTask={addTask} />
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
+      <TaskList tasks={items} toggleTask={toggleTask} deleteTask={deleteTask}/>
     </>
   );
 }
