@@ -1,0 +1,189 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PAGE */
+body {
+  background-color: #eef1f5;
+  padding: 30px;
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+/* LEFT + RIGHT SIDE */
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-side {
+  flex: 2;
+}
+
+/* CARD (Forms + Previews) */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  min-height: 200px; /* ensures cards don't collapse */
+}
+
+/* PREVIEW HEADER (title + edit button) */
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* EDIT BUTTON */
+.preview-header button {
+  width: auto;
+  margin: 0;
+  padding: 5px 12px;
+  font-size: 13px;
+  background-color: transparent;
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview-header button:hover {
+  background-color: #4f46e5;
+  color: white;
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px #4f46e5;
+}
+
+/* SAVE BUTTON IN FORMS */
+.card button.save-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.card button.save-btn:hover {
+  background-color: #4338ca;
+}
+
+/* MULTIPLE ENTRIES (Education/Experience) */
+.edu-entry, .exp-entry {
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f9fafb;
+  margin-bottom: 12px;
+}
+
+/* ADD/REMOVE ENTRY BUTTONS */
+.edu-entry button, .exp-entry button {
+  background: transparent;
+  border: 1px solid #4f46e5;
+  color: #4f46e5;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.edu-entry button:hover, .exp-entry button:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* DATE ROWS (Start/End Dates) */
+.date-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* PREVIEW ITEMS */
+.preview-item {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.preview-item strong {
+  color: #111;
+}
+
+/* FINAL CV SECTION */
+.final-cv {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.final-cv .cv-section {
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.final-cv .cv-section h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.final-cv .cv-section h2 {
+  font-size: 20px;
+  color: #4f46e5;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.final-cv .cv-section p {
+  font-size: 14px;
+  margin: 2px 0;
+}
