@@ -26,3 +26,6 @@ export async function getForecast(city) {
 
   return response.json();
 }
+
+export const getIconUrl = (icon) =>
+  `https://openweathermap.org/img/wn/${icon}@4x.png`;
