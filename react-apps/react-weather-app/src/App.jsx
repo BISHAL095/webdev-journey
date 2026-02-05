@@ -10,7 +10,6 @@ function App() {
   const [forecastData, setForecastData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
-
   async function onSearch(city) {
     try {
       setLoading(true);

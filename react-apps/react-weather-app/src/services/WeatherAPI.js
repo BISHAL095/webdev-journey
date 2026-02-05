@@ -1,5 +1,5 @@
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
-const KEY ="5d92c58abcc38c1871351807773eeda5"; //import.meta.env.VITE_WEATHER_API_KEY; 
+const KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 // For current weather
 export async function getCurrentWeather(city) {
