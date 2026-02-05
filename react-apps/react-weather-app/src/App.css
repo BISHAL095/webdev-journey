@@ -1,47 +1,226 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+}
+
+/* VERY IMPORTANT — controls the whole layout */
+.app-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+/* ---------- SEARCH ---------- */
+
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 6px;
+  width: 100%;
+  max-width: 460px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+}
+
+.search-bar button {
+  border: none;
+  background: #4f46e5;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.search-bar button:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+/* ---------- WEATHER CARD ---------- */
+
+.weather-wrapper{
+  width:100%;
+  max-width:900px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:32px;
+}
+
 .Weather-Card {
-  width: 350px;
-  margin: 40px auto;
-  padding: 25px;
+  width: 420px;
+  padding: 34px;
 
-  border-radius: 20px;
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  border-radius: 32px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  /* PREMIUM GLASS */
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 10px 40px rgba(31, 38, 135, 0.25);
 
   text-align: center;
-  color: #1f2937;
+  color: #0f172a;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 .Weather-Card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  transform: translateY(-12px);
 }
 
-/* City */
+/* Location */
 .Weather-Card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* BIG Temperature */
+.Weather-Card h1 {
+  font-size: 4.8rem;
+  margin: 8px 0;
+  font-weight: 700;
+}
+
+/* Weather text */
+.weather-main {
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
-/* Temperature (Make it BIG) */
-.Weather-Card h1 {
-  font-size: 3.5rem;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-/* Weather details */
-.Weather-Card h3 {
-  font-weight: 500;
-  margin: 6px 0;
-}
-
-/* Icon styling */
+/* Icon */
 .Weather-Card img {
-  width: 80px;
-  height: 80px;
-  vertical-align: middle;
+  width: 115px;
+  height: 115px;
+}
+
+/* ---------- INFO GRID ---------- */
+
+.weather-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.weather-info div {
+  background: rgba(255,255,255,0.35);
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+.weather-info div:hover {
+  background: rgba(255,255,255,0.55);
+}
+
+/* ---------- FORECAST ---------- */
+
+.forecast-container {
+  width: 100%;
+  max-width: 720px;
+
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+
+  padding: 10px 5px 15px;
+}
+
+/* nicer scroll */
+.forecast-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+
+/* Forecast Cards */
+.forecast-card {
+  min-width: 115px;
+  padding: 16px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(12px);
+
+  text-align: center;
+
+  transition: 0.25s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-8px);
+}
+
+.forecast-card img {
+  width: 60px;
+}
+
+/* ---------- STATUS TEXT ---------- */
+
+.status {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  .Weather-Card {
+    width: 95%;
+    padding: 26px;
+  }
+
+  .Weather-Card h1 {
+    font-size: 3.8rem;
+  }
+
+  .forecast-container {
+    gap: 12px;
+  }
+
 }
