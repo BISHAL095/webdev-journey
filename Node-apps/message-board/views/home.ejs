@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Message Board</h1>
+
+        <a class="button" href="/new">+ New Message</a>
+
+        <% if (messages.length === 0) { %>
+            <p>No messages yet.</p>
+        <% } %>
+
+        <% messages.forEach((message) => { %>
+            <div class="message-card">
+                <h3><%= message.user %></h3>
+                <p><%= message.text %></p>
+                <small><%= message.added.toLocaleString() %></small>
+            </div>
+        <% }) %>
+
+    </div>
+
+</body>
+</html>
